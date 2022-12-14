@@ -1,0 +1,24 @@
+
+<html >
+  <head>
+    <meta charset="UTF-8">
+  </head>
+<body>
+  <h1>Approve User</h1> 
+ <form th:action="@{/approve/users}" th:object="${form}" method="POST" enctype="utf8"> 
+    <div>
+      <label >username</label> 
+       
+          <th:block th:each="account : ${accounts}">
+            <td><input type="checkbox" th:field="*{accounts}"   th:text="${account.username}" th:value="${account.user_id}" /></td>
+        </th:block>
+    
+    </div>
+      
+    <button type="submit"> 
+        approve</button>
+</form>
+
+<!-- <a th:href="@{/login.html}" th:text="#{label.form.loginLink}">login</a> -->
+</body>
+</html>

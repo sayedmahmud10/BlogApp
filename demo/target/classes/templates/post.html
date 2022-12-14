@@ -1,0 +1,19 @@
+<html >
+  <head>
+    <meta charset="UTF-8">
+  </head>
+<body>
+  <h1>Blog Post</h1> 
+<form th:action="@{/post}" th:object="${post}" method="POST" enctype="utf8">
+    <div>
+      <label >TEXT</label>
+         <input th:field="*{text}"/>
+        <p th:each="error: ${#fields.errors('text')}" 
+          th:text="${error}">Validation error</p>
+    </div>
+    <button type="submit" >submit</button>
+</form>
+
+<!-- <a th:href="@{/login.html}" th:text="#{label.form.loginLink}">login</a> -->
+</body>
+</html>
